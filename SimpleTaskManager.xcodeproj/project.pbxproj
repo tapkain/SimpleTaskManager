@@ -15,6 +15,8 @@
 		792CE9D2208338BC00F5BAA3 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9D1208338BC00F5BAA3 /* Theme.xcassets */; };
 		792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */; };
 		79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEC20839DA70002B212 /* TaskListViewController.swift */; };
+		79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEF2083A2B80002B212 /* TaskListCell.swift */; };
+		79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF32083A3500002B212 /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		792CE9D1208338BC00F5BAA3 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		79BDFFEC20839DA70002B212 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		79BDFFEF2083A2B80002B212 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
+		79BDFFF32083A3500002B212 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +84,7 @@
 		79BDFFE920839C3E0002B212 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				79BDFFEB20839C9E0002B212 /* TaskList */,
+				79BDFFEB20839C9E0002B212 /* TaskListScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -97,12 +101,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		79BDFFEB20839C9E0002B212 /* TaskList */ = {
+		79BDFFEB20839C9E0002B212 /* TaskListScene */ = {
+			isa = PBXGroup;
+			children = (
+				79BDFFF22083A3200002B212 /* CategoriesView */,
+				79BDFFEE2083A28D0002B212 /* TaskListView */,
+			);
+			path = TaskListScene;
+			sourceTree = "<group>";
+		};
+		79BDFFEE2083A28D0002B212 /* TaskListView */ = {
 			isa = PBXGroup;
 			children = (
 				79BDFFEC20839DA70002B212 /* TaskListViewController.swift */,
+				79BDFFEF2083A2B80002B212 /* TaskListCell.swift */,
 			);
-			path = TaskList;
+			path = TaskListView;
+			sourceTree = "<group>";
+		};
+		79BDFFF22083A3200002B212 /* CategoriesView */ = {
+			isa = PBXGroup;
+			children = (
+				79BDFFF32083A3500002B212 /* CategoryCell.swift */,
+			);
+			path = CategoriesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +200,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */,
+				79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */,
 				79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */,
 				792CE9BD2083338700F5BAA3 /* AppDelegate.swift in Sources */,
 				792CE9C52083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld in Sources */,
+				79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
