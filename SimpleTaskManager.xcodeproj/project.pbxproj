@@ -13,6 +13,7 @@
 		792CE9C52083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9C32083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld */; };
 		792CE9C72083338A00F5BAA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C62083338A00F5BAA3 /* Assets.xcassets */; };
 		792CE9CA2083338A00F5BAA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C82083338A00F5BAA3 /* LaunchScreen.storyboard */; };
+		792CE9D2208338BC00F5BAA3 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9D1208338BC00F5BAA3 /* Theme.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		792CE9C62083338A00F5BAA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		792CE9C92083338A00F5BAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		792CE9CB2083338A00F5BAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792CE9D1208338BC00F5BAA3 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				792CE9BC2083338700F5BAA3 /* AppDelegate.swift */,
 				792CE9BE2083338700F5BAA3 /* ViewController.swift */,
 				792CE9C02083338700F5BAA3 /* Main.storyboard */,
+				792CE9D1208338BC00F5BAA3 /* Theme.xcassets */,
 				792CE9C62083338A00F5BAA3 /* Assets.xcassets */,
 				792CE9C82083338A00F5BAA3 /* LaunchScreen.storyboard */,
 				792CE9CB2083338A00F5BAA3 /* Info.plist */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792CE9CA2083338A00F5BAA3 /* LaunchScreen.storyboard in Resources */,
+				792CE9D2208338BC00F5BAA3 /* Theme.xcassets in Resources */,
 				792CE9C72083338A00F5BAA3 /* Assets.xcassets in Resources */,
 				792CE9C22083338700F5BAA3 /* Main.storyboard in Resources */,
 			);
