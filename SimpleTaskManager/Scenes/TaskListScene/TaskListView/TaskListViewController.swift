@@ -87,6 +87,14 @@ extension TaskListViewController {
     
     cell.titleText = task.title
     cell.title.text = task.title
+    
+    if let dueDate = task.dueDate {
+      cell.dueDate.text = Styles.dateFormatter.string(from: dueDate)
+      cell.dueDate.isHidden = false
+    } else {
+      cell.dueDate.isHidden = true
+    }
+    
     cell.setSelected(task.completed, animated: true)
   }
 }

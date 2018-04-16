@@ -19,10 +19,8 @@ class TaskListCell: UITableViewCell {
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     if selected {
-      let attributeString = NSMutableAttributedString(string: titleText)
-      attributeString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
       title.text = nil
-      title.attributedText = attributeString
+      title.attributedText = Styles.strikethrough(from: titleText)
     } else {
       title.attributedText = nil
       title.text = titleText

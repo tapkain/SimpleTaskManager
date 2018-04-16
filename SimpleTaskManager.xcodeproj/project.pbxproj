@@ -17,6 +17,7 @@
 		79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEF2083A2B80002B212 /* TaskListCell.swift */; };
 		79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF32083A3500002B212 /* CategoryCell.swift */; };
 		79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF92083A7C80002B212 /* SimpleTaskManager.xcdatamodeld */; };
+		79BDFFFD2084D7FC0002B212 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFFC2084D7FC0002B212 /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		79BDFFEF2083A2B80002B212 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		79BDFFF32083A3500002B212 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		79BDFFFA2083A7C80002B212 /* SimpleTaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTaskManager.xcdatamodel; sourceTree = "<group>"; };
+		79BDFFFC2084D7FC0002B212 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				792CE9D320833EB200F5BAA3 /* Store */,
 				792CE9BC2083338700F5BAA3 /* AppDelegate.swift */,
 				792CE9CB2083338A00F5BAA3 /* Info.plist */,
+				79BDFFFC2084D7FC0002B212 /* Styles.swift */,
 			);
 			path = SimpleTaskManager;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */,
+				79BDFFFD2084D7FC0002B212 /* Styles.swift in Sources */,
 				79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */,
 				79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */,
 				79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */,
