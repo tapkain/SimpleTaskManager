@@ -21,12 +21,28 @@ class TaskListViewController: UITableViewController {
   }
   
   func deleteRow(at indexPath: IndexPath) {
-    tasks(for: indexPath).remove(at: indexPath.row)
+    var tasks = self.tasks(for: indexPath)
+    tasks.remove(at: indexPath.row)
+    
+    if indexPath.section == 0 {
+      currentTasks = tasks
+    } else {
+      completedTasks = tasks
+    }
+    
     tableView.deleteRows(at: [indexPath], with: .left)
   }
   
   func insertRow(at indexPath: IndexPath, task: Task) {
-    tasks(for: indexPath).append(task)
+    var tasks = self.tasks(for: indexPath)
+    tasks.append(task)
+    
+    if indexPath.section == 0 {
+      currentTasks = tasks
+    } else {
+      completedTasks = tasks
+    }
+    
     tableView.insertRows(at: [indexPath], with: .right)
   }
   
@@ -61,13 +77,17 @@ extension TaskListViewController {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: TaskListCell.identifier, for: indexPath) as! TaskListCell
+    cell.categoriesView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.identifier)
+    return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    guard let cell = cell as? TaskListCell else { return }
     let task = self.task(for: indexPath)
     
     cell.titleText = task.title
     cell.title.text = task.title
-    //cell.categoriesView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.identifier)
     cell.setSelected(task.completed, animated: true)
-    return cell
   }
 }
 
@@ -77,10 +97,6 @@ extension TaskListViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let task = self.task(for: indexPath)
     task.completed = !task.completed
-    
-    // TODO: read about move method
-    // read about swift list immutability, structs and why it is so
-    // read about out and in params
     
     tableView.performBatchUpdates({
       let atSection = abs(indexPath.section - 1)
