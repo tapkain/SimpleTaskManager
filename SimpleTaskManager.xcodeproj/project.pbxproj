@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		792CE9BD2083338700F5BAA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9BC2083338700F5BAA3 /* AppDelegate.swift */; };
 		792CE9C22083338700F5BAA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C02083338700F5BAA3 /* Main.storyboard */; };
-		792CE9C52083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9C32083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld */; };
 		792CE9C72083338A00F5BAA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C62083338A00F5BAA3 /* Assets.xcassets */; };
 		792CE9CA2083338A00F5BAA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C82083338A00F5BAA3 /* LaunchScreen.storyboard */; };
 		792CE9D2208338BC00F5BAA3 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9D1208338BC00F5BAA3 /* Theme.xcassets */; };
@@ -17,13 +16,13 @@
 		79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEC20839DA70002B212 /* TaskListViewController.swift */; };
 		79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEF2083A2B80002B212 /* TaskListCell.swift */; };
 		79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF32083A3500002B212 /* CategoryCell.swift */; };
+		79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF92083A7C80002B212 /* SimpleTaskManager.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		792CE9B92083338700F5BAA3 /* SimpleTaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		792CE9BC2083338700F5BAA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		792CE9C12083338700F5BAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		792CE9C42083338700F5BAA3 /* SimpleTaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTaskManager.xcdatamodel; sourceTree = "<group>"; };
 		792CE9C62083338A00F5BAA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		792CE9C92083338A00F5BAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		792CE9CB2083338A00F5BAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		79BDFFEC20839DA70002B212 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		79BDFFEF2083A2B80002B212 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		79BDFFF32083A3500002B212 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		79BDFFFA2083A7C80002B212 /* SimpleTaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTaskManager.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 				792CE9D1208338BC00F5BAA3 /* Theme.xcassets */,
 				792CE9C62083338A00F5BAA3 /* Assets.xcassets */,
 				792CE9C82083338A00F5BAA3 /* LaunchScreen.storyboard */,
-				792CE9C32083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld */,
+				79BDFFF92083A7C80002B212 /* SimpleTaskManager.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 			files = (
 				792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */,
 				79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */,
+				79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */,
 				79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */,
 				792CE9BD2083338700F5BAA3 /* AppDelegate.swift in Sources */,
-				792CE9C52083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld in Sources */,
 				79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,12 +404,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		792CE9C32083338700F5BAA3 /* SimpleTaskManager.xcdatamodeld */ = {
+		79BDFFF92083A7C80002B212 /* SimpleTaskManager.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				792CE9C42083338700F5BAA3 /* SimpleTaskManager.xcdatamodel */,
+				79BDFFFA2083A7C80002B212 /* SimpleTaskManager.xcdatamodel */,
 			);
-			currentVersion = 792CE9C42083338700F5BAA3 /* SimpleTaskManager.xcdatamodel */;
+			currentVersion = 79BDFFFA2083A7C80002B212 /* SimpleTaskManager.xcdatamodel */;
 			path = SimpleTaskManager.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
