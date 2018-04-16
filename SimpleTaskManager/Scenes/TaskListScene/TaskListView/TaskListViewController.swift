@@ -76,9 +76,7 @@ extension TaskListViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: TaskListCell.identifier, for: indexPath) as! TaskListCell
-    cell.categoriesView.register(CategoryCell.self, forCellWithReuseIdentifier: CategoryCell.identifier)
-    return cell
+    return tableView.dequeueReusableCell(withIdentifier: TaskListCell.identifier, for: indexPath)
   }
   
   override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -87,14 +85,8 @@ extension TaskListViewController {
     
     cell.titleText = task.title
     cell.title.text = task.title
-    
-    if let dueDate = task.dueDate {
-      cell.dueDate.text = Styles.dateFormatter.string(from: dueDate)
-      cell.dueDate.isHidden = false
-    } else {
-      cell.dueDate.isHidden = true
-    }
-    
+    cell.dueDate.text = Styles.dateFormatter.string(from: task.dueDate!)    
+    cell.categories = task.categories?.allObjects.map { $0 as! Category }
     cell.setSelected(task.completed, animated: true)
   }
 }

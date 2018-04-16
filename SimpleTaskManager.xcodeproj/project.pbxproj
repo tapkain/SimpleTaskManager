@@ -18,6 +18,7 @@
 		79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF32083A3500002B212 /* CategoryCell.swift */; };
 		79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF92083A7C80002B212 /* SimpleTaskManager.xcdatamodeld */; };
 		79BDFFFD2084D7FC0002B212 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFFC2084D7FC0002B212 /* Styles.swift */; };
+		79BDFFFF2084ECDE0002B212 /* CategoryViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFFE2084ECDE0002B212 /* CategoryViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		79BDFFF32083A3500002B212 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		79BDFFFA2083A7C80002B212 /* SimpleTaskManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTaskManager.xcdatamodel; sourceTree = "<group>"; };
 		79BDFFFC2084D7FC0002B212 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		79BDFFFE2084ECDE0002B212 /* CategoryViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				79BDFFF32083A3500002B212 /* CategoryCell.swift */,
+				79BDFFFE2084ECDE0002B212 /* CategoryViewDelegate.swift */,
 			);
 			path = CategoriesView;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */,
 				79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */,
 				792CE9BD2083338700F5BAA3 /* AppDelegate.swift in Sources */,
+				79BDFFFF2084ECDE0002B212 /* CategoryViewDelegate.swift in Sources */,
 				79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

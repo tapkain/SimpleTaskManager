@@ -15,6 +15,10 @@ struct Styles {
     return attributeString
   }
   
+  static let systemFont: UIFont = {
+    return UIFont.systemFont(ofSize: UIFont.systemFontSize)
+  }()
+  
   static let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
