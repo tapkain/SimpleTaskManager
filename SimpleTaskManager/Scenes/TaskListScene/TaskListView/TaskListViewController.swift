@@ -46,8 +46,8 @@ class TaskListViewController: UITableViewController {
     tableView.insertRows(at: [indexPath], with: .right)
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     
     CoreDataStore.sharedInstance.fetch { (tasks: [Task]) in
       self.currentTasks = tasks.filter{ !$0.completed }
@@ -100,11 +100,26 @@ extension TaskListViewController {
     
     tableView.performBatchUpdates({
       let atSection = abs(indexPath.section - 1)
-      let atIndexPath = IndexPath(row: 0, section: atSection)
+      let lastRow = indexPath.section == 0 ? completedTasks.count : currentTasks.count
+      let atIndexPath = IndexPath(row: lastRow, section: atSection)
       self.deleteRow(at: indexPath)
       self.insertRow(at: atIndexPath, task: task)
     })
     
     CoreDataStore.sharedInstance.save()
+  }
+}
+
+
+// MARK: - Navigation
+extension TaskListViewController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "editSegue" {
+      if let taskDetails = segue.destination as? TaskDetailsViewController,
+         let cell = sender as? TaskListCell,
+         let indexPath = tableView.indexPath(for: cell) {
+        taskDetails.task = task(for: indexPath)
+      }
+    }
   }
 }

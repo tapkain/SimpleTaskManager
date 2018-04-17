@@ -60,11 +60,11 @@ class CoreDataStore {
     return NSEntityDescription.insertNewObject(forEntityName: String(describing: Entity.self), into: self.managedObjectContext) as! Entity
   }
   
-  func delete<Entity: NSManagedObject>(_ entity: Entity, completionHandler: @escaping (Bool) -> Void) {
+  func delete<Entity: NSManagedObject>(_ entity: Entity, completionHandler: ((Bool) -> Void)? = nil) {
     managedObjectContext.perform {
       self.managedObjectContext.delete(entity)
       self.save { result in
-        completionHandler(result)
+        completionHandler?(result)
       }
     }
   }
