@@ -20,9 +20,13 @@ class TaskListViewController: UITableViewController {
     return tasks(for: indexPath)[indexPath.row]
   }
   
-  func deleteRow(at indexPath: IndexPath) {
+  func deleteRow(at indexPath: IndexPath, fromStore: Bool = false) {
     var tasks = self.tasks(for: indexPath)
-    tasks.remove(at: indexPath.row)
+    let deletedTask = tasks.remove(at: indexPath.row)
+    
+    if fromStore {
+      CoreDataStore.sharedInstance.delete(deletedTask)
+    }
     
     if indexPath.section == 0 {
       currentTasks = tasks
@@ -107,6 +111,12 @@ extension TaskListViewController {
     })
     
     CoreDataStore.sharedInstance.save()
+  }
+  
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      deleteRow(at: indexPath, fromStore: true)
+    }
   }
 }
 
