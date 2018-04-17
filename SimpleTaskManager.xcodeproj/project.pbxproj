@@ -14,6 +14,7 @@
 		792CE9D2208338BC00F5BAA3 /* Theme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9D1208338BC00F5BAA3 /* Theme.xcassets */; };
 		792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */; };
 		793792E820865BC100EDC2C9 /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793792E720865BC100EDC2C9 /* TaskDetailsViewController.swift */; };
+		793792EA20867B6100EDC2C9 /* Task+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793792E920867B6100EDC2C9 /* Task+Helper.swift */; };
 		79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEC20839DA70002B212 /* TaskListViewController.swift */; };
 		79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEF2083A2B80002B212 /* TaskListCell.swift */; };
 		79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF32083A3500002B212 /* CategoryCell.swift */; };
@@ -32,6 +33,7 @@
 		792CE9D1208338BC00F5BAA3 /* Theme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Theme.xcassets; sourceTree = "<group>"; };
 		792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		793792E720865BC100EDC2C9 /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		793792E920867B6100EDC2C9 /* Task+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Helper.swift"; sourceTree = "<group>"; };
 		79BDFFEC20839DA70002B212 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		79BDFFEF2083A2B80002B212 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		79BDFFF32083A3500002B212 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */,
+				793792E920867B6100EDC2C9 /* Task+Helper.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				79BDFFFD2084D7FC0002B212 /* Styles.swift in Sources */,
 				79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */,
 				79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */,
+				793792EA20867B6100EDC2C9 /* Task+Helper.swift in Sources */,
 				793792E820865BC100EDC2C9 /* TaskDetailsViewController.swift in Sources */,
 				79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */,
 				792CE9BD2083338700F5BAA3 /* AppDelegate.swift in Sources */,

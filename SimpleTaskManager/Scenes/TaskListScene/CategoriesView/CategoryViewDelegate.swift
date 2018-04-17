@@ -10,8 +10,9 @@ import UIKit
 
 class CategoryViewDelegate: NSObject {
   let categories: [Category]
+  var userInteractionEnabled = false
   
-  init(categories: [Category], editable: Bool) {
+  init(categories: [Category], userInteractionEnabled: Bool) {
     let c: Category = CoreDataStore.sharedInstance.create()
     c.color = UIColor.red
     c.name = "project"
@@ -21,6 +22,7 @@ class CategoryViewDelegate: NSObject {
     c2.name = "personal"
 
     self.categories = [c, c2]
+    self.userInteractionEnabled = userInteractionEnabled
   }
 }
 
@@ -42,8 +44,14 @@ extension CategoryViewDelegate: UICollectionViewDataSource {
 
 
 // MARK: - UICollectionViewDelegate
-extension CategoryViewDelegate: UICollectionViewDelegate {
+extension CategoryViewDelegate: UICollectionViewDelegate {  
+  func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    return true
+  }
   
+  func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    return true
+  }
 }
 
 

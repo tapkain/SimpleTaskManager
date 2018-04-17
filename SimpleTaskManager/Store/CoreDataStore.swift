@@ -44,10 +44,9 @@ class CoreDataStore {
     }
   }
   
-  func fetch<Entity: NSManagedObject>(completionHandler: @escaping ([Entity]) -> Void) {
+  func fetch<Entity: NSManagedObject>(_ fetchRequest: NSFetchRequest<Entity>, completionHandler: @escaping ([Entity]) -> Void) {
     managedObjectContext.perform {
       do {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Entity.self))
         let entities = try self.managedObjectContext.fetch(fetchRequest) as! [Entity]
         completionHandler(entities)
       } catch {

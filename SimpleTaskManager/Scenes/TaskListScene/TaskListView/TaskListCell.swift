@@ -36,7 +36,7 @@ class TaskListCell: UITableViewCell {
   private var categoryDelegate: CategoryViewDelegate!
   var categories: [Category]! {
     didSet {
-      categoryDelegate = CategoryViewDelegate(categories: categories, editable: false)
+      categoryDelegate = CategoryViewDelegate(categories: categories, userInteractionEnabled: categoriesView.isUserInteractionEnabled)
       categoriesView.delegate = categoryDelegate
       categoriesView.dataSource = categoryDelegate
       

@@ -12,6 +12,7 @@ class TaskDetailsViewController: UIViewController {
   var task: Task!
   var categoryDelegate: CategoryViewDelegate!
   var isNewTask = false
+  var allCategories: [Category]!
   
   @IBOutlet weak var categoriesView: UICollectionView!
   @IBOutlet weak var dueDate: UIDatePicker!
@@ -47,10 +48,12 @@ class TaskDetailsViewController: UIViewController {
       dueDate.date = date
     }
     
-    if let categories = task.categories?.allObjects.map({ $0 as! Category }) {
-      categoryDelegate = CategoryViewDelegate(categories: categories, editable: true)
-      categoriesView.delegate = categoryDelegate
-      categoriesView.dataSource = categoryDelegate
+    CoreDataStore.sharedInstance.fetch(Category.fetchRequest()) { categories in
+      self.allCategories = categories
+      self.categoryDelegate = CategoryViewDelegate(categories: categories, userInteractionEnabled: self.categoriesView.isUserInteractionEnabled)
+      self.categoriesView.delegate = self.categoryDelegate
+      self.categoriesView.dataSource = self.categoryDelegate
+      self.categoriesView.allowsMultipleSelection = true
     }
   }
 }
@@ -61,6 +64,9 @@ extension TaskDetailsViewController {
   @objc func onFinishEditButtonPressed() {
     task.title = taskTitle.text
     task.dueDate = dueDate.date
+    
+    let selectedCategories = categoriesView.indexPathsForSelectedItems?.map { allCategories[$0.row] }
+    task.categories = NSSet(array: selectedCategories ?? [])
     
     CoreDataStore.sharedInstance.save {_ in
       self.isNewTask = false

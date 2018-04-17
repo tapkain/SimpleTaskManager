@@ -49,7 +49,7 @@ class TaskListViewController: UITableViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    CoreDataStore.sharedInstance.fetch { (tasks: [Task]) in
+    CoreDataStore.sharedInstance.fetch(Task.fetchRequest()) { tasks in
       self.currentTasks = tasks.filter{ !$0.completed }
       self.completedTasks = tasks.filter{ $0.completed }
       
@@ -86,7 +86,7 @@ extension TaskListViewController {
     cell.titleText = task.title
     cell.title.text = task.title
     cell.dueDate.text = Styles.dateFormatter.string(from: task.dueDate!)    
-    cell.categories = task.categories?.allObjects.map { $0 as! Category }
+    cell.categories = task.categoriesList
     cell.setSelected(task.completed, animated: true)
   }
 }
