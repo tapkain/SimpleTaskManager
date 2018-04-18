@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-  let showNotificationPref = "showNotification"
+  private var categoryDelegate: CategoryViewDelegate!
   
   @IBOutlet weak var showNotificationsSwitch: UISwitch!
   @IBOutlet weak var categoryButton: UIButton!
@@ -17,6 +17,14 @@ class SettingsViewController: UIViewController {
   
   override func viewDidLoad() {
     showNotificationsSwitch.isOn = Preferences.sharedInstance.showNotifications
+    
+    CoreDataStore.sharedInstance.fetch(Category.fetchRequest()) { categories in
+      DispatchQueue.main.async {
+        self.categoryDelegate = CategoryViewDelegate(categories: categories, userInteractionEnabled: self.categoriesView.isUserInteractionEnabled)
+        self.categoriesView.delegate = self.categoryDelegate
+        self.categoriesView.dataSource = self.categoryDelegate
+      }
+    }
   }
 }
 

@@ -18,6 +18,8 @@
 		792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */; };
 		793792E820865BC100EDC2C9 /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793792E720865BC100EDC2C9 /* TaskDetailsViewController.swift */; };
 		793792EA20867B6100EDC2C9 /* Task+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793792E920867B6100EDC2C9 /* Task+Helper.swift */; };
+		796F0DDA2087CB000064D5CC /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796F0DD92087CB000064D5CC /* CategoryDetailsViewController.swift */; };
+		796F0DDC2087D12C0064D5CC /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796F0DDB2087D12C0064D5CC /* UIView+Animation.swift */; };
 		79BDFFED20839DA70002B212 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEC20839DA70002B212 /* TaskListViewController.swift */; };
 		79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFEF2083A2B80002B212 /* TaskListCell.swift */; };
 		79BDFFF42083A3500002B212 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BDFFF32083A3500002B212 /* CategoryCell.swift */; };
@@ -40,6 +42,8 @@
 		792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
 		793792E720865BC100EDC2C9 /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 		793792E920867B6100EDC2C9 /* Task+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Helper.swift"; sourceTree = "<group>"; };
+		796F0DD92087CB000064D5CC /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
+		796F0DDB2087D12C0064D5CC /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		79BDFFEC20839DA70002B212 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		79BDFFEF2083A2B80002B212 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		79BDFFF32083A3500002B212 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 				792CE9CB2083338A00F5BAA3 /* Info.plist */,
 				79BDFFFC2084D7FC0002B212 /* Styles.swift */,
 				792137952087AD84004120CE /* Notifications.swift */,
+				796F0DDB2087D12C0064D5CC /* UIView+Animation.swift */,
 			);
 			path = SimpleTaskManager;
 			sourceTree = "<group>";
@@ -115,9 +120,18 @@
 			path = TaskDetailsScene;
 			sourceTree = "<group>";
 		};
+		796F0DD82087CAE50064D5CC /* CategoryDetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				796F0DD92087CB000064D5CC /* CategoryDetailsViewController.swift */,
+			);
+			path = CategoryDetailsScene;
+			sourceTree = "<group>";
+		};
 		79BDFFE920839C3E0002B212 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				796F0DD82087CAE50064D5CC /* CategoryDetailsScene */,
 				7921379020878D09004120CE /* SettingsScene */,
 				793792E620865B0E00EDC2C9 /* TaskDetailsScene */,
 				79BDFFEB20839C9E0002B212 /* TaskListScene */,
@@ -238,7 +252,9 @@
 			files = (
 				792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */,
 				79BDFFFD2084D7FC0002B212 /* Styles.swift in Sources */,
+				796F0DDC2087D12C0064D5CC /* UIView+Animation.swift in Sources */,
 				7921379420879368004120CE /* Preferences.swift in Sources */,
+				796F0DDA2087CB000064D5CC /* CategoryDetailsViewController.swift in Sources */,
 				7921379220878D1E004120CE /* SettingsViewController.swift in Sources */,
 				79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */,
 				792137962087AD84004120CE /* Notifications.swift in Sources */,
