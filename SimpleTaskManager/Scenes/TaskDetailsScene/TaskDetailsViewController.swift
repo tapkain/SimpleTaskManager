@@ -54,6 +54,15 @@ class TaskDetailsViewController: UIViewController {
       self.categoriesView.delegate = self.categoryDelegate
       self.categoriesView.dataSource = self.categoryDelegate
       self.categoriesView.allowsMultipleSelection = true
+      
+      if !self.isNewTask {
+        for category in self.task.categoriesList {
+          if let row = categories.index(of: category) {
+            let indexPath = IndexPath(row: row, section: 0)
+            self.categoriesView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+          }
+        }
+      }
     }
   }
 }

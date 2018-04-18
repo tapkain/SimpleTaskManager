@@ -10,8 +10,8 @@ import UIKit
 
 class CategoryDetailsViewController: UIViewController {
   var category: Category!
+  var dismissBlock: (() -> Void)!
   let colorPickerData = [
-    UIColor(named: "Main"),
     UIColor(named: "MainDark"),
     UIColor(named: "Orange"),
     UIColor(named: "Pink"),
@@ -24,14 +24,13 @@ class CategoryDetailsViewController: UIViewController {
   @IBOutlet weak var colorPicker: UIPickerView!
   
   override func viewDidLoad() {
+    super.viewDidLoad()
+    
     if category == nil {
       let newCategory: Category = CoreDataStore.sharedInstance.create()
       category = newCategory
     } else {
       name.text = category.name
-      if let row = colorPickerData.index(of: category.color as? UIColor) {
-        colorPicker.selectRow(row, inComponent: 0, animated: true)
-      }
     }
     
     colorPicker.delegate = self
@@ -71,7 +70,7 @@ extension CategoryDetailsViewController {
     category.color = colorPickerData[row]
     
     CoreDataStore.sharedInstance.save() {_ in
-      self.dismiss(animated: true)
+      self.dismiss(animated: true, completion: self.dismissBlock)
     }
   }
 }

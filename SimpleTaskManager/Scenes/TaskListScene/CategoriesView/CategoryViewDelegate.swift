@@ -13,15 +13,7 @@ class CategoryViewDelegate: NSObject {
   var userInteractionEnabled = false
   
   init(categories: [Category], userInteractionEnabled: Bool) {
-    let c: Category = CoreDataStore.sharedInstance.create()
-    c.color = UIColor.red
-    c.name = "project"
-    
-    let c2: Category = CoreDataStore.sharedInstance.create()
-    c2.color = UIColor.orange
-    c2.name = "personal"
-
-    self.categories = [c, c2]
+    self.categories = categories
     self.userInteractionEnabled = userInteractionEnabled
   }
 }

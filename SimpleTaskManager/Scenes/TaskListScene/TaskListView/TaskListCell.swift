@@ -27,7 +27,6 @@ class TaskListCell: UITableViewCell {
     }
   }
   
-  @IBOutlet weak var categoriesViewHeight: NSLayoutConstraint!
   @IBOutlet weak var categoriesView: UICollectionView!
   @IBOutlet weak var dueDate: UILabel!
   @IBOutlet weak var title: UILabel!
@@ -41,7 +40,6 @@ class TaskListCell: UITableViewCell {
       categoriesView.dataSource = categoryDelegate
       
       categoriesView.reloadData()
-      categoriesViewHeight.constant = categoriesView.collectionViewLayout.collectionViewContentSize.height
     }
   }
 }
