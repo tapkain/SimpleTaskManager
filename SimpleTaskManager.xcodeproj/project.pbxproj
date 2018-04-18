@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7921379220878D1E004120CE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921379120878D1E004120CE /* SettingsViewController.swift */; };
+		7921379420879368004120CE /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921379320879368004120CE /* Preferences.swift */; };
+		792137962087AD84004120CE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792137952087AD84004120CE /* Notifications.swift */; };
 		792CE9BD2083338700F5BAA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792CE9BC2083338700F5BAA3 /* AppDelegate.swift */; };
 		792CE9C22083338700F5BAA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C02083338700F5BAA3 /* Main.storyboard */; };
 		792CE9C72083338A00F5BAA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 792CE9C62083338A00F5BAA3 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7921379120878D1E004120CE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7921379320879368004120CE /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		792137952087AD84004120CE /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		792CE9B92083338700F5BAA3 /* SimpleTaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		792CE9BC2083338700F5BAA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		792CE9C12083338700F5BAA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7921379020878D09004120CE /* SettingsScene */ = {
+			isa = PBXGroup;
+			children = (
+				7921379120878D1E004120CE /* SettingsViewController.swift */,
+			);
+			path = SettingsScene;
+			sourceTree = "<group>";
+		};
 		792CE9B02083338700F5BAA3 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,7 @@
 				792CE9BC2083338700F5BAA3 /* AppDelegate.swift */,
 				792CE9CB2083338A00F5BAA3 /* Info.plist */,
 				79BDFFFC2084D7FC0002B212 /* Styles.swift */,
+				792137952087AD84004120CE /* Notifications.swift */,
 			);
 			path = SimpleTaskManager;
 			sourceTree = "<group>";
@@ -87,6 +102,7 @@
 			children = (
 				792CE9DB2083483800F5BAA3 /* CoreDataStore.swift */,
 				793792E920867B6100EDC2C9 /* Task+Helper.swift */,
+				7921379320879368004120CE /* Preferences.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -102,6 +118,7 @@
 		79BDFFE920839C3E0002B212 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7921379020878D09004120CE /* SettingsScene */,
 				793792E620865B0E00EDC2C9 /* TaskDetailsScene */,
 				79BDFFEB20839C9E0002B212 /* TaskListScene */,
 			);
@@ -221,7 +238,10 @@
 			files = (
 				792CE9DC2083483800F5BAA3 /* CoreDataStore.swift in Sources */,
 				79BDFFFD2084D7FC0002B212 /* Styles.swift in Sources */,
+				7921379420879368004120CE /* Preferences.swift in Sources */,
+				7921379220878D1E004120CE /* SettingsViewController.swift in Sources */,
 				79BDFFF02083A2B80002B212 /* TaskListCell.swift in Sources */,
+				792137962087AD84004120CE /* Notifications.swift in Sources */,
 				79BDFFFB2083A7C80002B212 /* SimpleTaskManager.xcdatamodeld in Sources */,
 				793792EA20867B6100EDC2C9 /* Task+Helper.swift in Sources */,
 				793792E820865BC100EDC2C9 /* TaskDetailsViewController.swift in Sources */,

@@ -89,7 +89,7 @@ extension TaskListViewController {
     
     cell.titleText = task.title
     cell.title.text = task.title
-    cell.dueDate.text = Styles.dateFormatter.string(from: task.dueDate!)    
+    cell.dueDate.text = Styles.dateFormatter.string(from: task.dueDate!)
     cell.categories = task.categoriesList
     cell.setSelected(task.completed, animated: true)
   }

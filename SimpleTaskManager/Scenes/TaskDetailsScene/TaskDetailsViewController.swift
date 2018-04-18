@@ -62,8 +62,15 @@ class TaskDetailsViewController: UIViewController {
 // MARK: - Actions
 extension TaskDetailsViewController {
   @objc func onFinishEditButtonPressed() {
-    task.title = taskTitle.text
+    let oldDueDate = task.dueDate
     task.dueDate = dueDate.date
+    task.title = taskTitle.text
+    
+    if oldDueDate == nil || oldDueDate! != dueDate.date {
+      if Preferences.sharedInstance.showNotifications {
+        Notifications.sharedInstance.scheduleNotification(with: task)
+      }
+    }
     
     let selectedCategories = categoriesView.indexPathsForSelectedItems?.map { allCategories[$0.row] }
     task.categories = NSSet(array: selectedCategories ?? [])
