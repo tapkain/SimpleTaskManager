@@ -20,24 +20,31 @@ class TaskDetailsViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    setupNavigationButtons()
+    setupViews()
+  }
+  
+  func setupNavigationButtons() {
+    var rightBarButtonItems: [UIBarButtonItem] = []
     var rightButtonTitle = ""
     isNewTask = task == nil
     
     if isNewTask {
       let newTask: Task = CoreDataStore.sharedInstance.create()
-      newTask.completed = false
       task = newTask
       rightButtonTitle = "Add"
       title = "Add Task"
     } else {
+      let deleteButton = UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(onDeleteButtonPressed))
+      rightBarButtonItems.append(deleteButton)
       rightButtonTitle = "Edit"
       title = "Edit Task"
     }
     
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightButtonTitle, style: .plain, target: self, action: #selector(onFinishEditButtonPressed))
-    
-    setupViews()
+    let editButton = UIBarButtonItem(title: rightButtonTitle, style: .plain, target: self, action: #selector(onFinishEditButtonPressed))
+    rightBarButtonItems.append(editButton)
+    rightBarButtonItems.reverse()
+    navigationItem.rightBarButtonItems = rightBarButtonItems
   }
   
   func setupViews() {
@@ -49,17 +56,24 @@ class TaskDetailsViewController: UIViewController {
     }
     
     CoreDataStore.sharedInstance.fetch(Category.fetchRequest()) { categories in
-      self.allCategories = categories
-      self.categoryDelegate = CategoryViewDelegate(categories: categories, userInteractionEnabled: self.categoriesView.isUserInteractionEnabled)
-      self.categoriesView.delegate = self.categoryDelegate
-      self.categoriesView.dataSource = self.categoryDelegate
-      self.categoriesView.allowsMultipleSelection = true
-      
-      if !self.isNewTask {
-        for category in self.task.categoriesList {
-          if let row = categories.index(of: category) {
-            let indexPath = IndexPath(row: row, section: 0)
-            self.categoriesView.selectItem(at: indexPath, animated: false, scrollPosition: .left)
+      self.setupCategoriesView(with: categories)
+    }
+  }
+  
+  func setupCategoriesView(with categories: [Category]) {
+    allCategories = categories
+    categoryDelegate = CategoryViewDelegate(categories: categories, userInteractionEnabled: categoriesView.isUserInteractionEnabled)
+    categoriesView.delegate = categoryDelegate
+    categoriesView.dataSource = categoryDelegate
+    categoriesView.allowsMultipleSelection = true
+    
+    if !isNewTask {
+      for category in task.categoriesList {
+        if let row = categories.index(of: category) {
+          let indexPath = IndexPath(row: row, section: 0)
+          
+          DispatchQueue.main.async {
+            self.categoriesView.selectItem(at: indexPath, animated: true, scrollPosition: .left)
           }
         }
       }
@@ -70,10 +84,20 @@ class TaskDetailsViewController: UIViewController {
 
 // MARK: - Actions
 extension TaskDetailsViewController {
+  @objc func onDeleteButtonPressed() {
+    CoreDataStore.sharedInstance.delete(task) {_ in
+      self.navigationController?.popViewController(animated: true)
+    }
+  }
+  
   @objc func onFinishEditButtonPressed() {
+    guard let taskTitle = taskTitle.text, taskTitle.count > 0 else {
+      return
+    }
+    
     let oldDueDate = task.dueDate
     task.dueDate = dueDate.date
-    task.title = taskTitle.text
+    task.title = taskTitle
     
     if oldDueDate == nil || oldDueDate! != dueDate.date {
       if Preferences.sharedInstance.showNotifications {

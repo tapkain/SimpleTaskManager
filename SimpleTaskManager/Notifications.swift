@@ -33,12 +33,8 @@ class Notifications: NSObject {
     content.title = task.title!
     content.sound = UNNotificationSound.default()
     
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2,
-                                                    repeats: false)
-    
-    //let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
-    //let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
-    //repeats: false)
+    let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: task.dueDate!)
+    let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
     
     let identifier = "SimpleTaskManagerNotification"
     let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
