@@ -278,7 +278,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="214" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cN5-Oi-sGJ">
                                                 <rect key="frame" x="0.0" y="30" width="214" height="163.66666666666666"/>
@@ -323,6 +323,7 @@
                     <connections>
                         <outlet property="colorPicker" destination="cN5-Oi-sGJ" id="Vm4-j3-v6l"/>
                         <outlet property="dialog" destination="sNb-ij-bWH" id="oc2-Ym-g2l"/>
+                        <outlet property="dialogCenterY" destination="bc2-mR-dR8" id="YuU-dF-vgy"/>
                         <outlet property="name" destination="sjL-Ef-hbq" id="B6n-Aw-2Tt"/>
                     </connections>
                 </viewController>

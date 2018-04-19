@@ -22,6 +22,7 @@ class CategoryDetailsViewController: UIViewController {
   @IBOutlet weak var dialog: UIView!
   @IBOutlet weak var name: UITextField!
   @IBOutlet weak var colorPicker: UIPickerView!
+  @IBOutlet weak var dialogCenterY: NSLayoutConstraint!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,6 +36,13 @@ class CategoryDetailsViewController: UIViewController {
     
     colorPicker.delegate = self
     colorPicker.dataSource = self
+    name.delegate = self
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    
+    let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    view.addGestureRecognizer(tap)
   }
 }
 
@@ -71,6 +79,36 @@ extension CategoryDetailsViewController {
     
     CoreDataStore.sharedInstance.save() {_ in
       self.dismiss(animated: true, completion: self.dismissBlock)
+    }
+  }
+}
+
+
+// MARK - Keyboard Handling {
+extension CategoryDetailsViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    hideKeyboard()
+    return false
+  }
+  
+  @objc func hideKeyboard() {
+    view.endEditing(true)
+  }
+  
+  @objc func handleKeyboardNotification(notification: NSNotification) {
+    guard let userInfo = notification.userInfo else {
+      return
+    }
+    
+    guard let keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
+      return
+    }
+    
+    let isKeyboardShowing = notification.name == NSNotification.Name.UIKeyboardWillShow
+    UIView.animate(withDuration: 0.3) {
+      let constant = -keyboardFrame.height + self.dialog.frame.height / 2
+      self.dialogCenterY.constant = isKeyboardShowing ? constant : 0
+      self.dialog.layoutIfNeeded()
     }
   }
 }
