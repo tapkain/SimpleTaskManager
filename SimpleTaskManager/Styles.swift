@@ -15,8 +15,17 @@ struct Styles {
     return attributeString
   }
   
+  static func size(of text: String, font: UIFont) -> CGSize {
+    let text = text as NSString
+    return text.size(withAttributes: [.font: font])
+  }
+  
   static let systemFont: UIFont = {
     return UIFont.systemFont(ofSize: UIFont.systemFontSize)
+  }()
+  
+  static let categoryFont: UIFont = {
+    return UIFont.systemFont(ofSize: 14, weight: .medium)
   }()
   
   static let dateFormatter: DateFormatter = {

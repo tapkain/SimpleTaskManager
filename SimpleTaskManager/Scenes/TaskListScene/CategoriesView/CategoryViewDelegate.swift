@@ -50,8 +50,7 @@ extension CategoryViewDelegate: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension CategoryViewDelegate: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let text = categories[indexPath.row].name! as NSString
-    let size = text.size(withAttributes: [.font: Styles.systemFont])
+    let size = Styles.size(of: categories[indexPath.row].name!, font: Styles.systemFont)
     return CGSize(width: size.width + 15, height: size.height + 3)
   }
 }

@@ -79,6 +79,29 @@ extension TaskListViewController {
     return [currentTasks.count, completedTasks.count][section]
   }
   
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    var height: CGFloat = 55
+    let padding: CGFloat = 5
+    
+    var rowWidth: CGFloat = 0
+    let categories = task(for: indexPath).categoriesList
+    for category in categories {
+      let size = Styles.size(of: category.name!, font: Styles.categoryFont)
+      rowWidth += size.width + padding * 3
+      if rowWidth >= tableView.frame.width * 0.55 {
+        rowWidth = 0
+        height += size.height * 2
+      }
+    }
+    
+    if rowWidth > 0 {
+      height += Styles.size(of: "", font: Styles.categoryFont).height * 2
+    }
+    
+    height += padding
+    return height
+  }
+  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     return tableView.dequeueReusableCell(withIdentifier: TaskListCell.identifier, for: indexPath)
   }
